@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-fixed-top" >
+    <div class="brand-container">
+        <div class="logo">SM</div>
+        <span class="text" href="#">SocialMovie</span>
+        <span class="icone icone-xs hide show-sm " (click)="toggleMenu()"><i class="fa fa-bars"></i></span>
+        <li>
+            <span class="icone icone-lg ml-2 hide show-sm  badge badge-sm" badge="7"><i class="fa fa-comment"></i></span>
+        </li>
+    </div>
+  @if(showMenu){       
+    <div class="collapse navbar-collapse hide-sm" id="navbarSupportedContent" #collapseMenu>
+        <ul class="navbar-nav nav-menu">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Search movie ...</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">My movie</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav mr-auto ">
+            <li class="nav-item mr-2">
+                <a class="nav-link " href="#">My profile</a>
+            </li>
+            <li class="mr-1">
+                <span class="icone icone-md icone-lg hide-sm  show-md badge-lg" badge="7"><i class="fa fa-comment"></i></span>
+            </li>
+           
+        </ul>
+    </div>
+  }
+    
+</nav>

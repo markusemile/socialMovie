@@ -1,0 +1,71 @@
+@use 'sass:map';
+
+// breakpoints
+$xs: 0px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+$icone: (
+    xs:0.6em,
+    sm:0.8em,
+    md:1em,
+    lg:1.2em,
+    xl:1.4em,
+    xxl:1.6em
+);
+$badge:(
+    xs:0.4em,
+    sm:0.6em,
+    md:0.8em,
+    lg:1em
+    );
+
+@mixin create-spacing($start,$end,$name,$style,$step,$unit){
+    @for $i from $start through $end {
+        $size: $i * $step;
+        .#{$name}-#{$i}{
+            #{$style}: #{$size}#{$unit};
+        }    
+    }
+}
+
+@mixin create-from-object($map, $name, $style) {    
+    @each $key, $value in $map {
+        .#{$name}-#{$key} {
+            #{$style}: #{$value} !important;
+        }
+    }
+}
+
+
+//flexbox
+.d-flex {
+    display: flex;
+}
+
+// margin
+@include create-spacing(0,10, 'ml','margin-left', 1, 'em');
+// padding
+@include create-spacing(0,10, 'mr','margin-right', 1, 'em');
+
+// icone
+@include create-from-object($icone, 'icone', 'font-size');
+.icone-xs.icone-sm{
+    font-size:map.get($icone, xs) !important;
+}
+
+
+// badge
+@each $key, $value in $badge {
+    .badge-#{$key}:after{
+        content : attr(badge);
+        position: absolute;
+        top: calc(-#{$value} + (#{$value} / 2));
+        color:var(--warn);
+        border-radius: 50%;
+        font-size:#{$value} !important
+    }
+}

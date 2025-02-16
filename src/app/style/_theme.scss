@@ -1,0 +1,82 @@
+@use 'positions' as *;
+@use 'colors' as *;
+@use 'typo' as *;
+
+
+:root{
+    --light: #{$light};
+    --light50: #{$light50};
+    --dark: #{$dark};
+    --dark50: #{$dark50};
+    --primary: #{$primary};
+    --secondary: #{$secondary};
+    --accent: #{$accent};
+    --warn: #{$warn};
+    --danger: #{$danger};
+    --success: #{$success};
+    --text-color:#{$light};
+}
+
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    // color
+    background-color: var(--light);
+    // typo
+    font-size:24px;
+    font-family: $poppins;
+}
+
+a{
+    color: var(--text-color);
+    text-decoration: none;
+}
+li { list-style: none;}
+
+//icone
+.icone {
+    position:relative;
+    color:var(--text-color);
+}
+
+//showing
+.hide{
+    display:none;
+}
+@media (min-width: #{$xs}) and (max-width: #{$md}){
+    html{
+        .show-sm{
+            display: inline !important;
+        }
+        .hide-sm{
+            display:none !important;
+        }
+        
+    }
+}
+@media(min-width: #{$md}){
+    html{
+        .show-md{
+            display: inline !important;
+        }
+        .hide-md{
+            display:none;
+        }
+    }
+}
+@media(max-width: #{$lg}){
+    html{
+        .show-lg{
+            display: inline !important;
+        }
+        .hide-lg{
+            display:none;
+        }
+    }
+
+}
+
+
+
