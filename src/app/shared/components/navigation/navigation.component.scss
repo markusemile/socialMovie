@@ -9,8 +9,9 @@ $light50:rgba(228, 228, 228,50%);
 
 nav { 
     width: 100%;
-    padding:.5em 0;
+    padding:0 .5em;
     min-height:120px !important;
+    max-height:130px !important;
     background-color: var(--dark,$dark);
     position:relative;
   

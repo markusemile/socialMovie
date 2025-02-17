@@ -1,8 +1,9 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'smapp-navigation',
-  imports: [],
+  imports: [RouterLink,RouterLinkActive],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss'
 })

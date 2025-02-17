@@ -11,18 +11,18 @@
     <div class="collapse navbar-collapse hide-sm" id="navbarSupportedContent" #collapseMenu>
         <ul class="navbar-nav nav-menu">
             <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="#" [routerLink]="['/home']" [routerLinkActive]="['active']">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Search movie ...</a>
+                <a class="nav-link" href="#" [routerLink]="['/search-movie']" [routerLinkActive]="['active']">Search movie ...</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">My movie</a>
+                <a class="nav-link" href="#" [routerLink]="['/my-movie']" [routerLinkActive]="['active']">My movie</a>
             </li>
         </ul>
         <ul class="navbar-nav mr-auto ">
             <li class="nav-item mr-2">
-                <a class="nav-link " href="#">My profile</a>
+                <a class="nav-link " href="#" [routerLink]="['/profile']" [routerLinkActive]="['active']">My profile</a>
             </li>
             <li class="mr-1">
                 <span class="icone icone-md icone-lg hide-sm  show-md badge-lg" badge="7"><i class="fa fa-comment"></i></span>
