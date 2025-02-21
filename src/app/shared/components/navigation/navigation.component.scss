@@ -1,5 +1,8 @@
 @use 'positions' as *;
-
+$dark: #212027;
+$light: rgb(235, 235, 235);
+$light-bar-text : $dark;
+$dark-bar-text : $light;
 
 
 $dark: #0e0b16;
@@ -14,6 +17,7 @@ nav {
     max-height:130px !important;
     background-color: var(--dark,$dark);
     position:relative;
+    z-index: 9999999999;
   
 }
 .navbar-fixed-top{
@@ -21,6 +25,10 @@ nav {
     top: 0;
     left: 0;
 }
+.icone,a{
+    color : var(--bar-dark-text,$dark-bar-text);
+}
+
 .navbar-expand-lg {
     display: flex;
     justify-content: center;
@@ -36,14 +44,14 @@ nav {
     .logo{
         margin-right: .5em;
         padding:.3em;
-        border:2px solid var(--light,$light);
+        border:2px solid var(--bar-dark-text,$dark-bar-text);
         border-radius: 50%;
         font-size: .6em;
-        color: var(--light,$light);  
+        color: var(--bar-dark-text,$dark-bar-text);  
     }
     .text{
         margin-right: .5em;
-        color: var(--light,$light);  
+        color: var(--bar-dark-text,$dark-bar-text);  
         font-size: clamp(1.2em,1.5em,2em);
     }
    

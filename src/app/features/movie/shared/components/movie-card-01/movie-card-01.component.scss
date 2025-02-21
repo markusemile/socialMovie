@@ -1,0 +1,60 @@
+@use 'sass:math';
+
+ 
+    
+.card{
+    display:flex;
+    
+    width: calc((var(--max-width) -  var(--filter-width) - (var(--nbrCol) * var(--colMargin))) / var(--nbrCol) ); 
+    max-width:calc((var(--max-width) -  var(--filter-width) -  (var(--nbrCol) * var(--colMargin))) / var(--nbrCol) );
+    height:auto !important;
+    
+    flex-direction: column;
+    flex-wrap: wrap;    
+    align-items: stretch;
+    
+    background-color: rgba(231, 231, 231, 0.61);
+    
+    border:1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    
+   
+    .poster{
+     
+        width:100%;
+        min-height:calc(150px * 1.5);
+        overflow: hidden;
+        img{
+            display: inline-block;
+            width:100%;
+            height:100%;
+            object-fit: cover;
+            object-position: top left;
+        }
+    }  
+    .card-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: calc((var(--max-width) -  var(--filter-width) - 50px - (var(--nbrCol) * var(--colMargin))) / (var(--nbrCol)*1.5));
+    }
+
+    .title{
+        display:inline-block;
+        text-align: center;
+        padding:.5em;
+        font-size: 0.6em;
+        text-overflow: ellipsis;
+        font-weight: bold;
+    }
+    .date{
+        display:inline-block;
+        font-size:0.5em;
+        text-align: center;
+        text-overflow: ellipsis;
+    }
+
+
+}

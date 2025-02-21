@@ -2,9 +2,9 @@
 
 // breakpoints
 $xs: 0px;
-$sm: 576px;
+$sm: 480px;
 $md: 768px;
-$lg: 992px;
+$lg: 1024px;
 $xl: 1200px;
 $xxl: 1400px;
 
@@ -41,14 +41,57 @@ $badge:(
 }
 
 // container
-.page-container{
+.main-container{
+    width:100%;
+    padding:0;
+    margin:0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.page-wrapper{
+    position:relative;
+    width:100%;
+    margin:0;
+    max-width:1500px;
     margin-top:130px !important;
+    background-color: var(--bg-color);
 }
 
+// width
+.w-full{ width: 100vw;}
+
+
 //flexbox
-.d-flex {
+@mixin flexbox(){
+    position: relative;
     display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
+.flex {
+    @include flexbox();
+}
+.flex-col{
+    @include flexbox();
+    flex-direction: column;
+}
+.flex-center{
+    @include flexbox();
+    justify-content: center;
+}
+.flex-end{
+    @include flexbox();
+    justify-content: flex-end;
+}
+.self-center{
+    justify-self: center;
+}
+.flex-wrap{
+    flex-wrap: wrap
+}
+
 
 // margin
 @include create-spacing(0,10, 'ml','margin-left', 1, 'em');

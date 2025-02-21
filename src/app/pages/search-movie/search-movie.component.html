@@ -1,3 +1,14 @@
-<div class="page-container">
-    <p>search-movie works!</p>
+<div class="page-wrapper flex-center w-full">
+    @if(loading){
+        <smapp-loading-dots text="We load the movie lists"/>
+    }  
+    @if(searchQuery != undefined && !loading){
+        <div class="filter-container" >
+            <smapp-movie-filters/>
+        </div>
+        <div class="page-container" flex-center>
+            <smapp-movie-list [movies]="searchQuery"/>            
+        </div>
+    }
+    
 </div>

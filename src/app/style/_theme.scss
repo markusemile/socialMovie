@@ -1,9 +1,12 @@
 @use 'positions' as *;
 @use 'colors' as *;
 @use 'typo' as *;
+@use 'functions' as *;
+@use 'dark-theme' as *;
 
 
 :root{
+
     --light: #{$light};
     --light50: #{$light50};
     --dark: #{$dark};
@@ -14,8 +17,13 @@
     --warn: #{$warn};
     --danger: #{$danger};
     --success: #{$success};
-    --text-color:#{$light};
+    --text-color:#{$dark};
+    --bg-color:rgb(235, 235, 235);
+
+
 }
+
+
 
 html,body{
     margin: 0;
@@ -34,14 +42,21 @@ a{
     text-decoration: none;
 }
 .active{
-    color:var(--danger)
+    color:var(--danger) !important;
 }
 li { list-style: none;}
 
 //icone
 .icone {
     position:relative;
+    margin : 0 .5em;
     color:var(--text-color);
+    &.icone:has(+ a.active){
+        color:var(--danger);
+    }
+    &.icone-m{
+        font-size: +1.5em;
+    }
 }
 
 //showing
@@ -81,5 +96,45 @@ li { list-style: none;}
 
 }
 
+// responsive variable
+@media screen and (max-width:$sm){ //480
+    html{
+        --max-width: #{$sm};
+        --nbrCol:2;
+        --colMargin:60px;
+        --filter-width: 0px;
+        }
+}
+@media screen and (min-width:$md){ //768
+    html{
+        --max-width: #{$md};
+        --nbrCol:3;
+        --filter-width: 260px;
+        --colMargin:10px;    
+    }   
+}
+@media screen and (min-width:$lg){ //1024
+    html{
+        --max-width: #{$lg};
+        --nbrCol:5;
+        --filter-width: 260px;
+        --colMargin:10px;
+    }
+}
+@media screen and (min-width:$xl){ //1200
+    html{
+        --max-width: #{$xl};
+        --nbrCol:5;
+        --filter-width: 260px;
+        --colMargin:10px;
+    }
+}
+@media screen and (min-width:$xxl){  //1400
+    html{
+        --max-width: #{$xxl};
+        --nbrCol:7;
+        --colMargin:0px;
+    }
+}
 
 

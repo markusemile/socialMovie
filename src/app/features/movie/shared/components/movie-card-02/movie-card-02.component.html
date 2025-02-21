@@ -1,0 +1,11 @@
+<div class="card style_1 flex-start">
+    <div class="image card-02">
+        <a href="#" [routerLink]="['../movie/'+movie.id+'-'+(movie.title|toUri)]">
+            <img loading="lazy" class="poster w-full" [src]="movie.posterPathList" alt="">
+        </a>
+    </div>
+    <a href="#" [routerLink]="['../movie/'+ movie.id+'-'+(movie.title|toUri)]">
+        <h6>{{movie.title}}</h6>
+    </a>
+    <p>{{movie.releaseDate}}</p>
+  </div>

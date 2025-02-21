@@ -1,0 +1,12 @@
+.movie-list{
+    position:relative;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap:10px;
+
+
+}
+
+// paddingX = taille du container - (nbre de colonne*taille de la card) - ()

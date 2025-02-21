@@ -1,0 +1,13 @@
+<div class="card style_1">
+    <div class="poster">
+        <a href="#" [routerLink]="['../movie/'+movie.id+'-'+(movie.title|toUri)]">
+        <img loading="lazy" class="poster" [src]="movie.posterPathList" alt="">
+        </a>
+    </div>
+    <div class="card-container flex-col">
+        <a href="#" [routerLink]="['../movie/'+ movie.id+'-'+(movie.title|toUri)]">
+            <span class="title">{{movie.title}}</span>    
+        </a>
+        <span class="date">{{movie.releaseDate}}</span>    
+    </div>
+  </div>

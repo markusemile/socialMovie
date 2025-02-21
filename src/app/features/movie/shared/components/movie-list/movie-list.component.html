@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="tools">
+        <span class="icone" (click)="displayCard=false"><i class="mdi mdi-view-list"></i></span>
+        <span class="icone" (click)="displayCard=true"><i class="mdi mdi-view-module"></i></span>
+        {{displayCard}}
+    </div>
+    <div class="flex-col">
+        <!-- we display liste if we have a response  from api -->
+        @if(movies !== undefined && movies.results !== undefined && movies.results.length > 0){
+            <!-- display title -->
+            <h4>List of movies by </h4> 
+            <div class="movie-list" style="align-items: stretch;">
+                @for(movie of movies.results; track movie.id){
+                    <smapp-movie-card-01 [movie]="movie" />
+                }
+            </div>
+        }
+    </div>
+
+</div>
